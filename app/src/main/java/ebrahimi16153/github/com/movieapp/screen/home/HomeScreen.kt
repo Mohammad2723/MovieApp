@@ -60,9 +60,9 @@ fun MainContent(navController: NavController,movieList: MutableList<String>) {
         Column(modifier = Modifier.padding(12.dp)) {
             LazyColumn {
 
-                items(items = movieList) {
-                    MovieRow(item = it) {
-                        navController.navigate(route = MoviesScreen.DetailsScreen.name)
+                items(items = movieList) { movie ->
+                    MovieRow(item = movie) {
+                        navController.navigate(route = MoviesScreen.DetailsScreen.name+"/$movie")
 //                        Log.e("TAG", "itemClick")
                     }
                 }
